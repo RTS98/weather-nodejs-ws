@@ -58,7 +58,9 @@ app.get("/weather", (req, res) => {
 
       return res.send({
         address: req.query.address,
-        forecast: forecast,
+        forecast: forecast.forecast,
+        maxTemperature: forecast.maxTemperature,
+        humidity: forecast.humidity,
       });
     });
   });

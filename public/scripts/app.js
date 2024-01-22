@@ -17,7 +17,11 @@ weatherForm.addEventListener("submit", (event) => {
         messageOne.textContent = data.error;
       } else {
         messageOne.textContent = data.address;
-        messageTwo.textContent = data.forecast;
+        messageTwo.textContent = `Forecast: ${
+          data.forecast
+        } with maximum temperature ${Math.floor(
+          data.maxTemperature
+        )} and humidity ${data.humidity}`;
       }
     });
   });

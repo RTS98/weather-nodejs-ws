@@ -10,7 +10,11 @@ function forecast(lat, lon, callback) {
     } else if (body.cod >= 400) {
       callback("Please provide valid information", undefined);
     } else {
-      callback(undefined, body.weather[0].main);
+      callback(undefined, {
+        forecast: body.weather[0].main,
+        maxTemperature: body.main.temp_max,
+        humidity: body.main.humidity,
+      });
     }
   });
 }
